@@ -38,7 +38,7 @@ import path from "path";
 
 export const POST = async (request) => {
   try {
-    await mongoose.connect('mongodb://localhost:27017/images');
+    await mongoose.connect(process.env.MONGO_URI);
 
     const data = await request.formData();
     const file = data.get('file');
